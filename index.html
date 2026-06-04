@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moses Oluwasekan — Full Stack Developer</title>
+
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Moses Oluwasekan" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Moses Oluwasekan" data-text="Moses Oluwasekan">Moses Oluwasekan</h1>
+          <p class="title">Full Stack Web Developer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:mosesoluwa2005@gmail.com" class="contact-link">mosesoluwa2005@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+2348109176764" class="contact-link">+234 810 917 6764</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Olowora, Berger, Lagos State, Nigeria</address>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/moses-kouakanou-b7995b385/" class="contact-link" target="_blank">
+                moses-kouakanou
+              </a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="logo-github"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">GitHub</p>
+              <a href="https://github.com/mosescodes5" class="contact-link" target="_blank">mosescodes5</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/moses-kouakanou-b7995b385/" class="social-link" target="_blank" aria-label="LinkedIn">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://github.com/mosescodes5" class="social-link" target="_blank" aria-label="GitHub">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://wa.me/2349036897962?text=Hello%20mosescodes" class="social-link" target="_blank" aria-label="WhatsApp">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://www.tiktok.com/@mosescodes" class="social-link" target="_blank" aria-label="TikTok">
+              <ion-icon name="logo-tiktok"></ion-icon>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Blog</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
+        </ul>
+      </nav>
+
+      <!-- ABOUT -->
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I'm a highly motivated and detail-oriented software developer from Lagos, Nigeria, with a passion for building scalable, user-focused solutions. I specialize in full-stack development and data analysis, creating innovative solutions that make a difference.
+          </p>
+          <p>
+            My expertise spans WordPress development, custom software engineering, and web application development. I'm organized, dependable, and possess strong problem-solving abilities. Currently pursuing my BSc in Computer Science at Ecole Supérieure Sainte Felicite, I'm committed to continuous learning and contributing to innovative projects that push boundaries.
+          </p>
+          <p>
+            I'm also the sole founder and developer of <a href="https://evenova.vercel.app/" target="_blank" class="evenova-mention"><ion-icon name="ticket-outline"></ion-icon> Evenova</a> — a professional event ticketing and management platform built for Nigeria.
+          </p>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="service">
+          <h3 class="h3 service-title">What I Do</h3>
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg" alt="UI/UX design icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">UI / Web Design</h4>
+                <p class="service-item-text">
+                  Designing clean, modern, and responsive interfaces that improve user experience and brand identity.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web Development</h4>
+                <p class="service-item-text">
+                  Building scalable and secure web applications using PHP, Python, JavaScript, MySQL, and REST APIs.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="WordPress icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">WordPress Development</h4>
+                <p class="service-item-text">
+                  Developing and maintaining high-performance WordPress websites with strong SEO and mobile optimization.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="Data analysis icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Analysis</h4>
+                <p class="service-item-text">
+                  Analyzing and visualizing data using Python (Pandas), Excel, and Google Sheets to support smart decisions.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+          <h3 class="h3 testimonials-title">Testimonials</h3>
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Project Manager" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Project Manager</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>Moses delivered a clean and responsive website that exceeded our expectations. He paid close attention to details, communicated clearly, and ensured everything worked smoothly across all devices.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-2.png" alt="WordPress Client" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>WordPress Client</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>He improved our WordPress site performance, SEO structure, and mobile experience. The site now loads faster and looks more professional. Very reliable and skilled.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-3.png" alt="Startup Founder" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Startup Founder</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>Moses built backend features for our web application using PHP and MySQL. He handled API integration and debugging professionally and delivered on time.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-4.png" alt="Team Lead" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Team Lead</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>A dependable developer with strong problem-solving skills. Moses understands both frontend and backend development and works well in a team.</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- MODAL -->
+        <div class="modal-container" data-modal-container>
+          <div class="overlay" data-overlay></div>
+          <section class="testimonials-modal">
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Project Manager" width="80" data-modal-img>
+              </figure>
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+            <div class="modal-content">
+              <h4 class="h3 modal-title" data-modal-title>Project Manager</h4>
+              <time datetime="2024-11">November, 2024</time>
+              <div data-modal-text>
+                <p>Moses demonstrated strong technical skills and professionalism throughout the project. He delivered a responsive and well-structured website, communicated clearly, and ensured all requirements were met on time.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- CLIENTS -->
+        <section class="clients">
+          <h3 class="h3 clients-title">Clients</h3>
+          <ul class="clients-list has-scrollbar">
+            <li class="clients-item"><a href="#"><img src="./assets/images/logo-1-color.png" alt="client logo"></a></li>
+            <li class="clients-item"><a href="#"><img src="./assets/images/logo-2-color.png" alt="client logo"></a></li>
+            <li class="clients-item"><a href="#"><img src="./assets/images/logo-3-color.png" alt="client logo"></a></li>
+            <li class="clients-item"><a href="#"><img src="./assets/images/logo-4-color.png" alt="client logo"></a></li>
+            <li class="clients-item"><a href="#"><img src="./assets/images/logo-5-color.png" alt="client logo"></a></li>
+            <li class="clients-item"><a href="#"><img src="./assets/images/logo-6-color.png" alt="client logo"></a></li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- RESUME -->
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="school-outline"></ion-icon></div>
+            <h3 class="h3">Education</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">BSc Computer Science</h4>
+              <span>2022 — 2025</span>
+              <p class="timeline-text">Ecole Supérieure Sainte Felicite, Republic of Benin. Focused on software development, web technologies, databases, and data analysis.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+            <h3 class="h3">Experience</h3>
+          </div>
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">WordPress Developer (Intern) — Tobams Group, UK</h4>
+              <span>Oct 2025 — Present</span>
+              <p class="timeline-text">Developed and maintained WordPress websites, improved SEO structure, optimized performance, and ensured mobile responsiveness.</p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Software Engineer / Web Developer — Wristbands Nigeria</h4>
+              <span>2024 — 2025</span>
+              <p class="timeline-text">Built and deployed custom event-management software using PHP, Python, MySQL, and REST APIs. Worked on ticketing systems, backend logic, data analytics, and UI improvements.</p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Web Developer — Finaxion, Lagos</h4>
+              <span>2020 — 2022</span>
+              <p class="timeline-text">Designed responsive web pages, developed WordPress websites, fixed performance issues, and collaborated with stakeholders to deliver quality solutions.</p>
+            </li>
+
+          </ol>
+        </section>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">My Skills</h3>
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Web Development (PHP, JavaScript)</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">WordPress Development</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Backend & Databases (MySQL)</h5>
+                <data value="75">75%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">React / Frontend Frameworks</h5>
+                <data value="72">72%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 72%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Data Analysis (Python, Excel)</h5>
+                <data value="70">70%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">UI/UX Design (Figma)</h5>
+                <data value="68">68%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 68%;"></div>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- PORTFOLIO -->
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <!-- EVENOVA FEATURED CARD -->
+          <div class="evenova-featured">
+            <div class="evenova-badge">🚀 Startup Project — Built Solo</div>
+            <a href="https://evenova.vercel.app/" target="_blank" class="evenova-inner">
+              <div class="evenova-glow"></div>
+              <div class="evenova-content">
+                <div class="evenova-header">
+                  <div class="evenova-logo-wrap">
+                    <ion-icon name="ticket-outline"></ion-icon>
+                  </div>
+                  <div>
+                    <h3 class="evenova-title">Evenova</h3>
+                    <p class="evenova-subtitle">Event Ticketing &amp; Management Platform · Nigeria</p>
+                  </div>
+                  <div class="evenova-arrow">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </div>
+                <p class="evenova-desc">
+                  A full-stack event ticketing platform designed for the Nigerian market.
+                  Features event discovery, ticket purchasing, QR code validation, and organizer dashboards —
+                  designed, developed, and deployed entirely solo.
+                </p>
+                <div class="evenova-tags">
+                  <span>PHP</span><span>MySQL</span><span>JavaScript</span><span>REST API</span><span>Vercel</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <ul class="filter-list">
+            <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+            <li class="filter-item"><button data-filter-btn>Web design</button></li>
+            <li class="filter-item"><button data-filter-btn>Applications</button></li>
+            <li class="filter-item"><button data-filter-btn>Web development</button></li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
+            </button>
+            <ul class="select-list">
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Web design</button></li>
+              <li class="select-item"><button data-select-item>Applications</button></li>
+              <li class="select-item"><button data-select-item>Web development</button></li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+
+            <!-- EVENOVA -->
+            <li class="project-item active evenova-grid-item" data-filter-item data-category="applications">
+              <a href="https://evenova.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <div class="evenova-grid-placeholder">
+                    <ion-icon name="ticket-outline"></ion-icon>
+                    <span>evenova.vercel.app</span>
+                  </div>
+                </figure>
+                <h3 class="project-title">Evenova — Ticketing Platform</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <!-- Web Development -->
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://gygi.eu/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-1.jpg" alt="GYGI Corporate Website" loading="lazy">
+                </figure>
+                <h3 class="project-title">GYGI Corporate Website</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://perfectionrealestategroup.com/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-2.png" alt="Real Estate Website" loading="lazy">
+                </figure>
+                <h3 class="project-title">Perfection Real Estate Group</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://jirehhomeslimited.com/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-3.jpg" alt="Jireh Homes Website" loading="lazy">
+                </figure>
+                <h3 class="project-title">Jireh Homes Limited</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://shop.finaxion.com.ng/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-4.png" alt="E-commerce Store" loading="lazy">
+                </figure>
+                <h3 class="project-title">Finaxion WooCommerce Store</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <!-- Applications -->
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="https://watch-store-dusky.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-5.png" alt="Watch Store App" loading="lazy">
+                </figure>
+                <h3 class="project-title">Watch Store App</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="https://health-care-two-lac.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-6.png" alt="Healthcare Web App" loading="lazy">
+                </figure>
+                <h3 class="project-title">Healthcare Web App</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="https://age-calculator-ten-xi.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-7.png" alt="Age Calculator" loading="lazy">
+                </figure>
+                <h3 class="project-title">Age Calculator Tool</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <!-- Web Design -->
+            <li class="project-item active" data-filter-item data-category="web design">
+              <a href="https://gaming-site-snowy.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-8.jpg" alt="Gaming Website UI" loading="lazy">
+                </figure>
+                <h3 class="project-title">Gaming Website UI</h3>
+                <p class="project-category">Web design</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web design">
+              <a href="https://gaming-site-o91m.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-9.png" alt="Gaming Concept UI" loading="lazy">
+                </figure>
+                <h3 class="project-title">Gaming Site Concept</h3>
+                <p class="project-category">Web design</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web design">
+              <a href="https://netflix-login-omega.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-1.jpg" alt="Netflix Login Clone" loading="lazy">
+                </figure>
+                <h3 class="project-title">Netflix Login UI Clone</h3>
+                <p class="project-category">Web design</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="https://rubik-s-cube-nine.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-2.png" alt="Rubik's Cube Game" loading="lazy">
+                </figure>
+                <h3 class="project-title">Rubik's Cube Game</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="https://snake-game-neon-nine-71.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-3.jpg" alt="Snake Game" loading="lazy">
+                </figure>
+                <h3 class="project-title">Snake Game</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <!-- NEW PROJECTS -->
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://github.com/mosescodes5" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-4.png" alt="Event Ticketing System" loading="lazy">
+                </figure>
+                <h3 class="project-title">Event Ticketing System</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="https://github.com/mosescodes5" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-5.png" alt="Data Dashboard" loading="lazy">
+                </figure>
+                <h3 class="project-title">Python Data Analytics Dashboard</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web design">
+              <a href="https://github.com/mosescodes5" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/project-6.png" alt="Restaurant Landing Page" loading="lazy">
+                </figure>
+                <h3 class="project-title">Restaurant Landing Page</h3>
+                <p class="project-category">Web design</p>
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+      <!-- BLOG -->
+      <article class="blog" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Scalable web apps" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Web Development</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-11-10">Nov 10, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">How I Build Scalable Web Applications</h3>
+                  <p class="blog-text">Tools and best practices I use when building PHP and JavaScript applications.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="WordPress optimization" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">WordPress</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-10-22">Oct 22, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Optimizing WordPress for Speed & SEO</h3>
+                  <p class="blog-text">Practical techniques to improve performance and mobile experience.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Backend journey" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Backend</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-09-05">Sep 5, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">My Journey Into Backend Development</h3>
+                  <p class="blog-text">Lessons learned working with APIs, databases, and server-side logic.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="Python data" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Data Science</p>
+                    <span class="dot"></span>
+                    <time datetime="2025-01-15">Jan 15, 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Getting Started with Python Data Analysis</h3>
+                  <p class="blog-text">How I use Pandas and Matplotlib to extract insights from business data.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpg" alt="REST API" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">API Design</p>
+                    <span class="dot"></span>
+                    <time datetime="2025-03-08">Mar 8, 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Building RESTful APIs with PHP & MySQL</h3>
+                  <p class="blog-text">A practical walkthrough of designing and securing REST endpoints.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpg" alt="Freelancing Nigeria" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Career</p>
+                    <span class="dot"></span>
+                    <time datetime="2025-05-20">May 20, 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Freelancing as a Developer in Nigeria</h3>
+                  <p class="blog-text">Tips on landing international clients and managing remote projects from Lagos.</p>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- CONTACT -->
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps?q=Lagos,+Nigeria&output=embed"
+              width="400" height="300" loading="lazy">
+            </iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+          <h3 class="h3 form-title">Let's Work Together</h3>
+          <form action="#" class="form" data-form>
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/animations.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
