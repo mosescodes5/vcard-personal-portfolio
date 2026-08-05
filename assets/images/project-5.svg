@@ -1,0 +1,47 @@
+<svg viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wsBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12101c"/>
+      <stop offset="100%" stop-color="#1c1730"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="375" fill="url(#wsBg)"/>
+
+  <rect x="0" y="0" width="500" height="34" fill="#0a0812"/>
+  <circle cx="18" cy="17" r="5" fill="#ff5f57"/>
+  <circle cx="36" cy="17" r="5" fill="#febc2e"/>
+  <circle cx="54" cy="17" r="5" fill="#28c840"/>
+  <rect x="150" y="8" width="220" height="18" rx="9" fill="#1e1a2b"/>
+  <text x="260" y="21" font-family="Poppins, Arial, sans-serif" font-size="10" fill="#a99fc2" text-anchor="middle">watch-store.vercel.app</text>
+
+  <text x="30" y="65" font-family="Poppins, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Watch Store</text>
+  <text x="30" y="83" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#8a7fa3">Premium timepieces, delivered</text>
+
+  <!-- watch cards -->
+  <g>
+    <rect x="30" y="105" width="130" height="150" rx="10" fill="#211b34"/>
+    <circle cx="95" cy="165" r="34" fill="none" stroke="#a78bfa" stroke-width="4"/>
+    <circle cx="95" cy="165" r="3" fill="#a78bfa"/>
+    <line x1="95" y1="165" x2="95" y2="145" stroke="#a78bfa" stroke-width="2"/>
+    <line x1="95" y1="165" x2="112" y2="165" stroke="#a78bfa" stroke-width="2"/>
+    <text x="95" y="235" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#c9c1de" text-anchor="middle">Classic Steel</text>
+    <text x="95" y="248" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#e879f9" text-anchor="middle">$249</text>
+  </g>
+  <g>
+    <rect x="172" y="105" width="130" height="150" rx="10" fill="#211b34"/>
+    <circle cx="237" cy="165" r="34" fill="none" stroke="#e879f9" stroke-width="4"/>
+    <circle cx="237" cy="165" r="3" fill="#e879f9"/>
+    <line x1="237" y1="165" x2="237" y2="148" stroke="#e879f9" stroke-width="2"/>
+    <line x1="237" y1="165" x2="250" y2="172" stroke="#e879f9" stroke-width="2"/>
+    <text x="237" y="235" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#c9c1de" text-anchor="middle">Rose Gold Chrono</text>
+    <text x="237" y="248" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#e879f9" text-anchor="middle">$389</text>
+  </g>
+  <g>
+    <rect x="314" y="105" width="130" height="150" rx="10" fill="#211b34"/>
+    <rect x="290" y="140" width="94" height="50" rx="10" fill="none" stroke="#a78bfa" stroke-width="4"/>
+    <text x="379" y="235" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#c9c1de" text-anchor="middle">Smart Fit</text>
+    <text x="379" y="248" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#e879f9" text-anchor="middle">$199</text>
+  </g>
+
+  <text x="30" y="290" font-family="Poppins, Arial, sans-serif" font-size="11" fill="#8a7fa3">Cart &amp; checkout flow  ·  Product filtering  ·  Responsive grid</text>
+</svg>

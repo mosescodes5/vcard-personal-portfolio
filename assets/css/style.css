@@ -35,13 +35,13 @@
   ), hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
-    hsl(168, 82%, 62%) 0%, 
-    hsla(190, 90%, 65%, 0) 50%
+    hsl(262, 82%, 62%) 0%, 
+    hsla(300, 90%, 65%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
     135deg, 
-    hsla(168, 82%, 55%, 0.251) 0%, 
-    hsla(190, 90%, 60%, 0) 59.86%
+    hsla(262, 82%, 55%, 0.251) 0%, 
+    hsla(300, 90%, 60%, 0) 59.86%
   ), hsl(240, 2%, 13%);
   --border-gradient-onyx: linear-gradient(
     to bottom right, 
@@ -50,8 +50,8 @@
   );
   --text-gradient-yellow: linear-gradient(
     to right, 
-    hsl(168, 78%, 58%), 
-    hsl(192, 85%, 60%)
+    hsl(262, 78%, 58%), 
+    hsl(300, 85%, 60%)
   );
 
   /* solid */
@@ -63,8 +63,8 @@
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(168, 76%, 50%);
-  --vegas-gold: hsl(38, 92%, 62%);
+  --orange-yellow-crayola: hsl(262, 76%, 50%);
+  --vegas-gold: hsl(320, 92%, 62%);
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
@@ -158,9 +158,9 @@ html { font-family: var(--ff-poppins); }
 body {
   background-color: var(--smoky-black);
   background-image:
-    radial-gradient(circle at 12% -8%, hsla(168, 76%, 45%, 0.16), transparent 42%),
-    radial-gradient(circle at 100% 8%, hsla(38, 92%, 60%, 0.10), transparent 38%),
-    radial-gradient(circle at 50% 100%, hsla(192, 85%, 55%, 0.08), transparent 45%);
+    radial-gradient(circle at 12% -8%, hsla(262, 76%, 45%, 0.16), transparent 42%),
+    radial-gradient(circle at 100% 8%, hsla(320, 92%, 60%, 0.10), transparent 38%),
+    radial-gradient(circle at 50% 100%, hsla(300, 85%, 55%, 0.08), transparent 45%);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -343,15 +343,15 @@ main {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
   box-shadow:
-    0 0 0 2px hsla(168, 76%, 50%, 0.4),
-    0 10px 30px hsla(168, 76%, 40%, 0.25);
+    0 0 0 2px hsla(262, 76%, 50%, 0.4),
+    0 10px 30px hsla(262, 76%, 40%, 0.25);
   transition: var(--transition-2);
 }
 
 .sidebar-info:hover .avatar-box {
   box-shadow:
-    0 0 0 2px hsla(168, 76%, 55%, 0.65),
-    0 12px 36px hsla(168, 76%, 45%, 0.35);
+    0 0 0 2px hsla(262, 76%, 55%, 0.65),
+    0 12px 36px hsla(262, 76%, 45%, 0.35);
 }
 
 .info-content .name {
@@ -568,7 +568,7 @@ main {
 
 .service-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px hsla(168, 76%, 30%, 0.2);
+  box-shadow: 0 20px 40px hsla(262, 76%, 30%, 0.2);
 }
 
 .service-item::before {
@@ -1010,7 +1010,7 @@ main {
 }
 
 .project-item > a:hover .project-img {
-  box-shadow: 0 18px 36px hsla(168, 76%, 30%, 0.35);
+  box-shadow: 0 18px 36px hsla(262, 76%, 30%, 0.35);
 }
 
 .project-img::before {
@@ -1026,7 +1026,7 @@ main {
 }
 
 .project-item > a:hover .project-img::before {
-  background: linear-gradient(180deg, hsla(168, 60%, 15%, 0.25) 0%, hsla(0, 0%, 0%, 0.7) 100%);
+  background: linear-gradient(180deg, hsla(262, 60%, 15%, 0.25) 0%, hsla(0, 0%, 0%, 0.7) 100%);
 }
 
 .project-item-icon-box {

@@ -1,0 +1,43 @@
+<svg viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hcBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1520"/>
+      <stop offset="100%" stop-color="#161d2c"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="375" fill="url(#hcBg)"/>
+
+  <rect x="0" y="0" width="500" height="34" fill="#0a0e16"/>
+  <circle cx="18" cy="17" r="5" fill="#ff5f57"/>
+  <circle cx="36" cy="17" r="5" fill="#febc2e"/>
+  <circle cx="54" cy="17" r="5" fill="#28c840"/>
+  <rect x="150" y="8" width="220" height="18" rx="9" fill="#1c2433"/>
+  <text x="260" y="21" font-family="Poppins, Arial, sans-serif" font-size="10" fill="#8fb3c2" text-anchor="middle">healthcare-app.vercel.app</text>
+
+  <g>
+    <rect x="20" y="26" width="0" height="0"/>
+  </g>
+
+  <text x="30" y="65" font-family="Poppins, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff">+ CareLink</text>
+  <text x="30" y="83" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#7fa8b8">Book appointments, track your health</text>
+
+  <!-- appointment card -->
+  <rect x="30" y="105" width="220" height="140" rx="12" fill="#1a2433"/>
+  <circle cx="60" cy="135" r="14" fill="#2dd4bf"/>
+  <text x="82" y="132" font-family="Poppins, Arial, sans-serif" font-size="10" font-weight="600" fill="#ffffff">Dr. Amaka Obi</text>
+  <text x="82" y="146" font-family="Poppins, Arial, sans-serif" font-size="8" fill="#7fa8b8">General Practitioner</text>
+  <rect x="44" y="165" width="192" height="1" fill="#2b3646"/>
+  <text x="44" y="188" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#c3d2e0">Today, 2:30 PM</text>
+  <text x="44" y="204" font-family="Poppins, Arial, sans-serif" font-size="9" fill="#c3d2e0">Video consultation</text>
+  <rect x="44" y="216" width="90" height="22" rx="11" fill="#2dd4bf"/>
+  <text x="89" y="231" font-family="Poppins, Arial, sans-serif" font-size="8" fill="#0f1520" text-anchor="middle" font-weight="600">Join Call</text>
+
+  <!-- vitals card -->
+  <rect x="264" y="105" width="206" height="140" rx="12" fill="#1a2433"/>
+  <text x="284" y="130" font-family="Poppins, Arial, sans-serif" font-size="10" fill="#ffffff" font-weight="600">Vitals Overview</text>
+  <polyline points="284,175 305,160 325,170 345,150 365,165 385,145 405,158 425,140" fill="none" stroke="#2dd4bf" stroke-width="2.5"/>
+  <text x="284" y="218" font-family="Poppins, Arial, sans-serif" font-size="18" fill="#2dd4bf" font-weight="700">72 bpm</text>
+  <text x="284" y="232" font-family="Poppins, Arial, sans-serif" font-size="8" fill="#7fa8b8">Resting heart rate</text>
+
+  <text x="30" y="272" font-family="Poppins, Arial, sans-serif" font-size="11" fill="#7fa8b8">Telemedicine booking  ·  Health records  ·  Reminders &amp; alerts</text>
+</svg>
