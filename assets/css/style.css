@@ -74,7 +74,9 @@
    */
 
   /* font-family */
-  --ff-poppins: 'Poppins', sans-serif;
+  --ff-display: 'Space Grotesk', sans-serif;
+  --ff-body: 'Inter', sans-serif;
+  --ff-mono: 'JetBrains Mono', monospace;
 
   /* font-size */
   --fs-1: 24px;
@@ -153,7 +155,24 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
-html { font-family: var(--ff-poppins); }
+html { font-family: var(--ff-body); }
+
+h1, h2, h3, h4, h5,
+.name, .navbar-link, .project-title, .service-item-title,
+.timeline-item-title, .form-btn, .testimonials-item-title {
+  font-family: var(--ff-display);
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--orange-yellow-crayola);
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
 
 body {
   background-color: var(--smoky-black);
@@ -228,15 +247,13 @@ article.active {
   100% { opacity: 1; }
 }
 
-.h2,
-.h3,
-.h4,
-.h5 {
+.h2, .h3, .h4, .h5 {
   color: var(--white-2);
   text-transform: capitalize;
+  font-weight: var(--fw-600);
 }
 
-.h2 { font-size: var(--fs-1); }
+.h2 { font-size: 28px; letter-spacing: -0.5px; }
 
 .h3 { font-size: var(--fs-2); }
 
@@ -356,9 +373,9 @@ main {
 
 .info-content .name {
   color: var(--white-2);
-  font-size: var(--fs-3);
-  font-weight: var(--fw-500);
-  letter-spacing: -0.25px;
+  font-size: 21px;
+  font-weight: var(--fw-600);
+  letter-spacing: -0.4px;
   margin-bottom: 10px;
 }
 
@@ -370,6 +387,14 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+}
+
+.stack-line {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--orange-yellow-crayola);
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
 .info_more-btn {
