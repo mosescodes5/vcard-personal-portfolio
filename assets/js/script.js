@@ -141,19 +141,28 @@ const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
 // add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+navigationLinks.forEach(function (navLink) {
+  navLink.addEventListener("click", function () {
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
+    const targetPage = navLink.innerHTML.toLowerCase().trim();
+
+    pages.forEach(function (page) {
+      if (targetPage === page.dataset.page) {
+        page.classList.add("active");
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        page.classList.remove("active");
       }
-    }
+    });
+
+    navigationLinks.forEach(function (link) {
+      if (link === navLink) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    window.scrollTo(0, 0);
 
   });
-}
+});
