@@ -20,7 +20,6 @@
 
   <rect width="500" height="375" fill="url(#evBg)"/>
 
-  <!-- browser chrome -->
   <rect x="0" y="0" width="500" height="34" fill="#0a0812"/>
   <circle cx="18" cy="17" r="5" fill="#ff5f57"/>
   <circle cx="36" cy="17" r="5" fill="#febc2e"/>
@@ -28,7 +27,6 @@
   <rect x="150" y="8" width="220" height="18" rx="9" fill="#1e1a2b"/>
   <text x="260" y="21" font-family="Poppins, Arial, sans-serif" font-size="10" fill="#a99fc2" text-anchor="middle">evenova.vercel.app</text>
 
-  <!-- app header -->
   <circle cx="34" cy="62" r="7" fill="url(#evBtn)"/>
   <text x="50" y="67" font-family="Poppins, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Evenova</text>
   <rect x="300" y="52" width="170" height="24" rx="12" fill="#1c1830" stroke="#3a2f57" stroke-width="1"/>
@@ -36,11 +34,9 @@
 
   <line x1="0" y1="90" x2="500" y2="90" stroke="#221c33" stroke-width="1"/>
 
-  <!-- heading -->
   <text x="30" y="120" font-family="Poppins, Arial, sans-serif" font-size="18" font-weight="600" fill="#ffffff">Discover events near you</text>
   <text x="30" y="138" font-family="Poppins, Arial, sans-serif" font-size="10" fill="#8a7fa3">QR-verified entry · Secure checkout · Organiser dashboard</text>
 
-  <!-- event cards -->
   <g>
     <rect x="30" y="155" width="205" height="120" rx="14" fill="url(#evCard1)"/>
     <rect x="30" y="155" width="205" height="66" rx="14" fill="#000000" opacity="0.12"/>
@@ -61,7 +57,6 @@
     <text x="422" y="254" font-family="Poppins, Arial, sans-serif" font-size="10" fill="#f3e8ff" text-anchor="end">₦15,000</text>
   </g>
 
-  <!-- ticket / QR stub -->
   <g>
     <rect x="30" y="292" width="427" height="60" rx="12" fill="#1a1528" stroke="#3a2f57" stroke-width="1"/>
     <rect x="42" y="304" width="36" height="36" rx="4" fill="#ffffff"/>
