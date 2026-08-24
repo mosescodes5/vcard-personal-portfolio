@@ -1,13 +1,18 @@
 const experience = [
   {
+    title: "Website Manager — Rynts LTD",
+    date: "Jun 2026 — Jul 2026",
+    text: "Managed end-to-end website operations and backend administration, overseeing platform architecture, content strategy, and analytics for the company's digital presence during a short-term engagement.",
+  },
+  {
     title: "Founder & Full-Stack Developer — Evenova, Lagos, Nigeria",
     date: "2024 — Present",
     text: "Architected and single-handedly built a full-stack event-ticketing platform (React.js/Next.js frontend, PHP/MySQL backend) with QR code validation and organiser dashboards, deployed on Vercel.",
   },
   {
-    title: "Frontend / WordPress Developer (Intern) — Tobams Group, UK (Remote)",
+    title: "Frontend / WordPress Developer (Intern) — Tobams Group, UK",
     date: "Oct 2024 — Feb 2025",
-    text: "Developed and maintained client WordPress sites, improving SEO structure and mobile performance. Translated design mockups into pixel-perfect, responsive UIs using React components.",
+    text: "Developed and maintained client WordPress sites, improved SEO structure, optimized performance, and ensured mobile responsiveness.",
   },
   {
     title: "Software Engineer / Web Developer — Wristbands Nigeria, Lagos",
@@ -17,7 +22,7 @@ const experience = [
   {
     title: "Full-Stack Web Developer — Finaxion, Gbagada, Lagos",
     date: "Jan 2020 — 2023",
-    text: "Designed responsive, brand-aligned WordPress sites for fintech and retail clients, integrating WooCommerce for e-commerce. Maintained 99%+ uptime across client sites.",
+    text: "Designed responsive, brand-aligned WordPress sites for fintech and retail clients, integrating WooCommerce for e-commerce, and maintained 99%+ uptime across client sites.",
   },
 ];
 
@@ -69,15 +74,12 @@ export default function Resume() {
   return (
     <article className="resume active">
       <header>
+        <p className="eyebrow">// resume</p>
         <h2 className="h2 article-title">Resume</h2>
       </header>
 
       <Timeline heading="Education" icon="school-outline" items={education} />
-      <Timeline
-        heading="Professional Experience"
-        icon="briefcase-outline"
-        items={experience}
-      />
+      <Timeline heading="Experience" icon="briefcase-outline" items={experience} />
 
       <section className="skill">
         <h3 className="h3 skills-title">Certifications</h3>

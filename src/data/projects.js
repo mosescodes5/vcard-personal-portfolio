@@ -1,8 +1,18 @@
-// Project data. Thumbnails use Lorem Picsum (https://picsum.photos) — a free,
-// no-API-key stock image source. These are generic placeholder photos, not
-// real screenshots of each site (screenshots can't be auto-captured here).
-// Swap `image` for a real screenshot any time by dropping a file into
-// src/assets/images and importing it instead.
+import evenova from "../assets/images/project-evenova.svg";
+import taiwo from "../assets/images/project-taiwo.svg";
+import rynts from "../assets/images/project-rynts.svg";
+import gygi from "../assets/images/project-1.jpg";
+import perfection from "../assets/images/project-2.png";
+import jireh from "../assets/images/project-3.jpg";
+import finaxion from "../assets/images/project-4.png";
+import watchstore from "../assets/images/project-5.png";
+import healthcare from "../assets/images/project-6.png";
+import agecalc from "../assets/images/project-7.png";
+import gaming1 from "../assets/images/project-8.svg";
+import gaming2 from "../assets/images/project-9.png";
+import netflix from "../assets/images/project-10.svg";
+import rubiks from "../assets/images/project-11.svg";
+import snake from "../assets/images/project-12.svg";
 
 const projects = [
   {
@@ -10,98 +20,105 @@ const projects = [
     title: "Evenova — Event Ticketing Platform",
     category: "web development",
     link: "https://evenova.vercel.app",
-    image: "https://picsum.photos/seed/evenova-tickets/600/450",
+    image: evenova,
   },
   {
     id: "taiwo",
     title: "Orísirísi with Taiwo — E-commerce",
     category: "web development",
     link: "https://taiwotea.com/",
-    image: "https://picsum.photos/seed/taiwo-shop/600/450",
+    image: taiwo,
+  },
+  {
+    id: "rynts",
+    title: "Rynts — Rental Marketplace (Website Management)",
+    category: "web development",
+    link: "https://rynts.com/",
+    image: rynts,
   },
   {
     id: "gygi",
-    title: "GYGI — Beauty Booking Platform",
+    title: "GYGI Corporate Website",
     category: "web development",
-    link: "https://www.gygi.eu/",
-    image: "https://picsum.photos/seed/gygi-beauty/600/450",
+    link: "https://gygi.eu/",
+    image: gygi,
   },
   {
     id: "perfection",
     title: "Perfection Real Estate Group",
     category: "web development",
     link: "https://perfectionrealestategroup.com/",
-    image: "https://picsum.photos/seed/perfection-estate/600/450",
+    image: perfection,
   },
   {
     id: "jireh",
     title: "Jireh Homes Limited",
     category: "web development",
     link: "https://jirehhomeslimited.com/",
-    image: "https://picsum.photos/seed/jireh-homes/600/450",
+    image: jireh,
   },
   {
     id: "finaxion",
-    title: "Finaxion — WooCommerce Store",
+    title: "Finaxion WooCommerce Store",
     category: "web development",
     link: "https://shop.finaxion.com.ng/",
-    image: "https://picsum.photos/seed/finaxion-shop/600/450",
+    image: finaxion,
   },
   {
     id: "watchstore",
     title: "Watch Store App",
     category: "applications",
-    link: "#",
-    image: "https://picsum.photos/seed/watch-store-app/600/450",
+    link: "https://watch-store-dusky.vercel.app/",
+    image: watchstore,
   },
   {
     id: "healthcare",
-    title: "CareLink — Healthcare Web App",
+    title: "Healthcare Web App",
     category: "applications",
-    link: "#",
-    image: "https://picsum.photos/seed/carelink-health/600/450",
+    link: "https://health-care-two-lac.vercel.app/",
+    image: healthcare,
   },
   {
     id: "agecalc",
     title: "Age Calculator Tool",
     category: "applications",
-    link: "#",
-    image: "https://picsum.photos/seed/age-calculator/600/450",
+    link: "https://age-calculator-ten-xi.vercel.app/",
+    image: agecalc,
   },
   {
     id: "gaming1",
-    title: "NexusArena — Gaming Website UI",
-    category: "design",
-    link: "#",
-    image: "https://picsum.photos/seed/nexus-arena-gaming/600/450",
+    title: "Gaming Website UI",
+    category: "web design",
+    link: "https://gaming-site-snowy.vercel.app/",
+    image: gaming1,
   },
   {
     id: "gaming2",
     title: "Gaming Site Concept",
-    category: "design",
-    link: "#",
-    image: "https://picsum.photos/seed/gaming-concept-ui/600/450",
+    category: "web design",
+    link: "https://gaming-site-o91m.vercel.app/",
+    image: gaming2,
   },
   {
     id: "netflix",
     title: "Netflix Login UI Clone",
-    category: "applications",
-    link: "#",
-    image: "https://picsum.photos/seed/netflix-login-clone/600/450",
+    category: "web design",
+    link: "https://netflix-login-omega.vercel.app/",
+    image: netflix,
   },
   {
     id: "rubiks",
     title: "Rubik's Cube Game",
     category: "applications",
-    link: "#",
-    image: "https://picsum.photos/seed/rubiks-cube-game/600/450",
+    link: "https://rubik-s-cube-nine.vercel.app/",
+    image: rubiks,
   },
   {
     id: "snake",
     title: "Snake Game",
     category: "applications",
-    link: "#",
-    image: "https://picsum.photos/seed/snake-game-arcade/600/450",
+    link: "https://snake-game-neon-nine-71.vercel.app/",
+    image: snake,
   },
 ];
 

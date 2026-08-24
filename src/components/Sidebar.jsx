@@ -8,20 +8,16 @@ export default function Sidebar() {
     <aside className={`sidebar ${expanded ? "active" : ""}`} data-sidebar>
       <div className="sidebar-info">
         <figure className="avatar-box">
-          <img src={avatar} alt="Kouakanou Moses Oluwasekan" width="80" />
+          <img src={avatar} alt="Moses Oluwasekan" width="80" />
         </figure>
 
         <div className="info-content">
-          <h1 className="name" title="Kouakanou Moses Oluwasekan">
-            Kouakanou Moses Oluwasekan
-          </h1>
-          <p className="title">Software Engineer · React &amp; Next.js Specialist</p>
+          <h1 className="name" title="Moses Oluwasekan">Moses Oluwasekan</h1>
+          <p className="title">Full Stack Web Developer</p>
+          <p className="stack-line">$ stack --react --nextjs --node</p>
         </div>
 
-        <button
-          className="info_more-btn"
-          onClick={() => setExpanded((v) => !v)}
-        >
+        <button className="info_more-btn" onClick={() => setExpanded((v) => !v)}>
           <span>Show Contacts</span>
           <ion-icon name="chevron-down"></ion-icon>
         </button>

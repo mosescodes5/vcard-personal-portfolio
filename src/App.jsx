@@ -21,7 +21,6 @@ export default function App() {
   return (
     <main>
       <Sidebar />
-
       <div className="main-content">
         <Navbar activePage={activePage} onNavigate={setActivePage} />
         <ActivePageComponent />

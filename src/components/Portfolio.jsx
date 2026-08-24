@@ -1,20 +1,19 @@
 import { useState } from "react";
 import projects from "../data/projects";
 
-const categories = ["all", "web development", "applications", "design"];
+const categories = ["all", "web development", "applications", "web design"];
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("all");
   const [selectOpen, setSelectOpen] = useState(false);
 
-  const filtered =
-    filter === "all" ? projects : projects.filter((p) => p.category === filter);
-
+  const filtered = filter === "all" ? projects : projects.filter((p) => p.category === filter);
   const label = (cat) => (cat === "all" ? "All" : cat.charAt(0).toUpperCase() + cat.slice(1));
 
   return (
     <article className="portfolio active">
       <header>
+        <p className="eyebrow">// portfolio</p>
         <h2 className="h2 article-title">Portfolio</h2>
       </header>
 
@@ -22,10 +21,7 @@ export default function Portfolio() {
         <ul className="filter-list">
           {categories.map((cat) => (
             <li className="filter-item" key={cat}>
-              <button
-                className={filter === cat ? "active" : ""}
-                onClick={() => setFilter(cat)}
-              >
+              <button className={filter === cat ? "active" : ""} onClick={() => setFilter(cat)}>
                 {label(cat)}
               </button>
             </li>
@@ -33,10 +29,7 @@ export default function Portfolio() {
         </ul>
 
         <div className="filter-select-box">
-          <button
-            className="filter-select"
-            onClick={() => setSelectOpen((v) => !v)}
-          >
+          <button className="filter-select" onClick={() => setSelectOpen((v) => !v)}>
             <div className="select-value">{label(filter)}</div>
             <div className="select-icon">
               <ion-icon name="chevron-down"></ion-icon>
@@ -46,12 +39,7 @@ export default function Portfolio() {
           <ul className={`select-list ${selectOpen ? "active" : ""}`}>
             {categories.map((cat) => (
               <li className="select-item" key={cat}>
-                <button
-                  onClick={() => {
-                    setFilter(cat);
-                    setSelectOpen(false);
-                  }}
-                >
+                <button onClick={() => { setFilter(cat); setSelectOpen(false); }}>
                   {label(cat)}
                 </button>
               </li>

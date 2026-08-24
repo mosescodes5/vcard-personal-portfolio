@@ -1,21 +1,26 @@
+import iconDev from "../assets/images/icon-dev.svg";
+import iconApp from "../assets/images/icon-app.svg";
+import iconDesign from "../assets/images/icon-design.svg";
+import iconPhoto from "../assets/images/icon-photo.svg";
+
 const services = [
   {
-    icon: "../assets/images/icon-dev.svg",
+    icon: iconDev,
     title: "Web Development",
     text: "Building scalable and secure web applications using React.js, Next.js, PHP, Python, MySQL, and REST APIs.",
   },
   {
-    icon: "../assets/images/icon-app.svg",
+    icon: iconApp,
     title: "WordPress Development",
     text: "Custom themes, plugins, and WooCommerce integrations built for performance and SEO.",
   },
   {
-    icon: "../assets/images/icon-design.svg",
+    icon: iconDesign,
     title: "UI/UX Design",
     text: "Prototyping and component design in Figma, translated into pixel-perfect, responsive interfaces.",
   },
   {
-    icon: "../assets/images/icon-photo.svg",
+    icon: iconPhoto,
     title: "Web Security",
     text: "Applying an ethical-hacking background to build safer applications and catch vulnerabilities early.",
   },
@@ -24,7 +29,7 @@ const services = [
 const skills = [
   { name: "React.js & Next.js", value: 88 },
   { name: "Web Development (PHP, JavaScript)", value: 85 },
-  { name: "Python & SQL", value: 78 },
+  { name: "App Development (Flutter, React Native)", value: 70 },
   { name: "WordPress & Elementor", value: 90 },
 ];
 
@@ -32,6 +37,7 @@ export default function About() {
   return (
     <article className="about active">
       <header>
+        <p className="eyebrow">// about</p>
         <h2 className="h2 article-title">About me</h2>
       </header>
 
@@ -80,10 +86,7 @@ export default function About() {
                 <data value={s.value}>{s.value}%</data>
               </div>
               <div className="skill-progress-bg">
-                <div
-                  className="skill-progress-fill"
-                  style={{ width: `${s.value}%` }}
-                ></div>
+                <div className="skill-progress-fill" style={{ width: `${s.value}%` }}></div>
               </div>
             </li>
           ))}

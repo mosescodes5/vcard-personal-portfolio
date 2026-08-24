@@ -1,61 +1,54 @@
-# vCard – Personal Portfolio
+# Moses Oluwasekan — Portfolio (React + Vite)
 
-![GitHub repo size](https://img.shields.io/github/repo-size/mosescodes5/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/mosescodes5/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/mosescodes5/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/oluwasekan?style=social)](https://x.com/oluwasekan)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Moses%20Kouakanou-blue?style=social&logo=linkedin)](https://www.linkedin.com/in/moses-kouakanou-b7995b385/)
+React rebuild of the portfolio. Same content as the HTML version — About,
+Resume (including Rynts), Portfolio (Evenova, Taiwo, Rynts, and the rest),
+Contact — same purple/pink identity, now as components instead of one big
+HTML file.
 
-vCard is a fully responsive personal portfolio website built to showcase my skills, projects, and experience as a **Software & Web Developer**.  
-The portfolio is optimized for all devices and built using **HTML, CSS, and JavaScript**.
-
----
-
-## 🚀 Live Demo
-
-🔗 **Portfolio Website**  
-https://myportfolio-beta-pied.vercel.app/
-
----
-
-## 🖥️ Preview
-
-![Desktop Preview](./website-demo-image/desktop.png)
-![Mobile Preview](./website-demo-image/mobile.png)
-
----
-
-## 🛠️ Built With
-
-- HTML5
-- CSS3
-- JavaScript
-- Responsive Design
-- Modern UI / UX
-
----
-
-## ✨ Features
-
-- Fully responsive layout
-- Filterable portfolio projects
-- Resume & skills section
-- Blog section
-- Contact form
-- Clean and modern design
-
----
-
-## 📦 Installation
-
-To run this project locally, follow these steps:
-
-### Prerequisites
-
-- Git installed on your machine
-
-### Clone the repository
+## Run locally
 
 ```bash
-git clone https://github.com/mosescodes5/vcard-personal-portfolio.git
+npm install
+npm run dev
 ```
+
+Open the printed URL (usually http://localhost:5173). **Always use this —
+never open dist/index.html directly by double-clicking it.** Opening files
+via `file://` breaks module scripts in every browser; that was very likely
+the cause of "nothing happens when I click Resume" in the old HTML version.
+
+## Build for production
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deploying to Vercel
+
+1. Push this folder to a GitHub repo (a fresh one, or replace the old
+   HTML repo's contents with this).
+2. Import the repo on vercel.com.
+3. Vercel will auto-detect **Vite** as the framework — let it. This is the
+   opposite of the earlier issue: the old HTML repo had a Vite build
+   silently running against plain static files, corrupting asset paths.
+   Here it's supposed to run Vite, so there's no mismatch.
+4. No build command / output directory overrides needed — Vercel's Vite
+   preset handles both automatically.
+
+## Project structure
+
+```
+src/
+  components/     — Sidebar, Navbar, About, Resume, Portfolio, Contact
+  data/
+    projects.js   — every project: title, link, category, image import
+  assets/images/  — avatar, icons, logos, project thumbnails
+  style.css       — same stylesheet as the HTML version (purple theme)
+```
+
+## Adding or editing a project
+
+Edit `src/data/projects.js` — add an entry with a `title`, `link`,
+`category`, and an imported `image`. The grid and filters pick it up
+automatically, no HTML editing required.
