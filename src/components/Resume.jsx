@@ -11,7 +11,7 @@ const experience = [
   },
   {
     title: "Frontend / WordPress Developer (Intern) — Tobams Group, UK",
-    date: "Oct 2024 — Feb 2025",
+    date: "Oct 2025 — Feb 2026",
     text: "Developed and maintained client WordPress sites, improved SEO structure, optimized performance, and ensured mobile responsiveness.",
   },
   {
