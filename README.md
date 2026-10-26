@@ -27,10 +27,10 @@ My personal portfolio: an iOS-inspired, motion-rich single-page site built with 
 
 | | |
 |---|---|
-| **Motion** | Masked line reveals in the hero, a section index that tracks your scroll, animated project rows that expand in place, staggered logo grid, and a live Lagos clock. Nothing follows the mouse. All motion is switched off for visitors who prefer reduced motion. |
+| **Motion** | Hero lines that rise out of masks, a portrait that reveals from the bottom, a pulsing scroll button, scroll-driven outlined section words, counters, and a floating technology field. No mouse tracking, and all motion switches off for visitors who prefer reduced motion. |
 | **Interactive** | Ctrl/Cmd + K command palette, filterable project index, expandable case rows, project detail sheets. |
 | **AI assistant** | "Ask my AI" chat streamed from a Cloudflare Worker to a private Ollama model. It answers only from the content in `src/data.js` and says so when it does not know. |
-| **Design** | Editorial layout with a fixed profile column, bone-paper and ink palette with a single vermilion accent, Bricolage Grotesque, Inter and JetBrains Mono. shadcn/ui components on Tailwind CSS, with light and dark themes that follow the device. |
+| **Design** | Dark developer-template layout: top navigation, headline with a cut-out portrait, info columns, browser-window project mockups with stack logos and links. shadcn/ui on Tailwind CSS, Space Grotesk and Inter. |
 
 ## Architecture
 
@@ -74,6 +74,24 @@ Import the repository in Vercel. It detects Vite: build command `npm run build`,
    ```
 3. Set `ALLOWED_ORIGIN` in `worker/wrangler.toml` to your Vercel URL.
 4. In Vercel, add the environment variable `VITE_API_URL` with your Worker URL and redeploy.
+
+## Admin dashboard
+
+Open `https://your-site/#admin` and sign in. From there you can add, edit, reorder, publish/unpublish and delete projects, upload screenshots, and upload or replace your CV, with no code changes. Everything is stored on Cloudflare (D1 database, R2 bucket) and protected by a server-side login.
+
+One-time setup:
+
+```powershell
+npx wrangler login
+npx wrangler d1 create portfolio                       # copy the database_id into worker/wrangler.toml
+npx wrangler r2 bucket create portfolio-media
+npx wrangler d1 execute portfolio --remote --file worker/schema.sql --config worker/wrangler.toml
+npx wrangler secret put ADMIN_PASSWORD --config worker/wrangler.toml   # your login password
+npx wrangler secret put JWT_SECRET --config worker/wrangler.toml       # any long random string
+npm run worker:deploy
+```
+
+Until you add projects in the dashboard, the site shows the starter list from `src/data.js`. Use "Import starter projects" once to copy them into the database.
 
 ## Project structure
 

@@ -1,8 +1,8 @@
 import {useEffect,useMemo,useState} from 'react';import {Dialog,DialogContent,DialogTitle} from '@/components/ui/dialog';import {projects,profile as P} from '@/data.js';
-export default function Palette({open,setOpen,onAi,onProject}){const[q,setQ]=useState(''),[i,setI]=useState(0);
+export default function Palette({open,setOpen,onAi,onProject,list}){const[q,setQ]=useState(''),[i,setI]=useState(0);
  useEffect(()=>{const k=e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();setOpen(o=>!o)}};addEventListener('keydown',k);return()=>removeEventListener('keydown',k)},[setOpen]);
  const go=h=>()=>{location.hash=h};
- const all=useMemo(()=>[['Go to projects',go('work')],['About me',go('about')],['Services',go('services')],['Contact Moses',go('contact')],['Ask my AI',onAi],['Open CV',()=>window.open(P.cv,'_blank')],...projects.map(p=>[`Project: ${p.t}`,()=>onProject(p)])],[onAi,onProject]);
+ const all=useMemo(()=>[['Go to projects',go('work')],['About me',go('about')],['Services',go('services')],['Contact Moses',go('contact')],['Ask my AI',onAi],['Open CV',()=>window.open(import.meta.env.VITE_API_URL?import.meta.env.VITE_API_URL+'/cv':P.cv,'_blank')],...(list||projects).map(p=>[`Project: ${p.t}`,()=>onProject(p)])],[onAi,onProject,list]);
  const L=all.filter(([t])=>t.toLowerCase().includes(q.toLowerCase())),run=n=>{const a=L[n];if(a){setOpen(false);setQ('');setTimeout(a[1],50)}};
  return <Dialog open={open} onOpenChange={o=>{setOpen(o);if(!o)setQ('')}}><DialogContent className="sm:top-[30%] sm:max-w-lg p-0">
   <DialogTitle className="sr-only">Command palette</DialogTitle>

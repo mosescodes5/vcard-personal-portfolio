@@ -1,7 +1,11 @@
 @tailwind base;@tailwind components;@tailwind utilities;
 @layer base{
-:root{--background:42 25% 93%;--foreground:40 10% 8%;--card:42 30% 96%;--card-foreground:40 10% 8%;--primary:14 80% 46%;--primary-foreground:0 0% 100%;--secondary:40 15% 87%;--secondary-foreground:40 10% 8%;--muted:40 15% 87%;--muted-foreground:40 6% 33%;--accent:40 15% 89%;--accent-foreground:40 10% 8%;--border:40 12% 79%;--ring:14 80% 46%;--radius:.5rem}
-.dark{--background:40 8% 7%;--foreground:42 25% 92%;--card:40 7% 10%;--card-foreground:42 25% 92%;--primary:14 85% 60%;--primary-foreground:40 8% 7%;--secondary:40 6% 14%;--secondary-foreground:42 25% 92%;--muted:40 6% 14%;--muted-foreground:40 8% 62%;--accent:40 6% 14%;--accent-foreground:42 25% 92%;--border:40 6% 19%;--ring:14 85% 60%}
+:root,.dark{--background:222 12% 12%;--foreground:0 0% 98%;--card:222 12% 15%;--card-foreground:0 0% 98%;--primary:221 91% 58%;--primary-foreground:0 0% 100%;--secondary:222 11% 19%;--secondary-foreground:0 0% 98%;--muted:222 11% 19%;--muted-foreground:220 8% 68%;--accent:222 11% 19%;--accent-foreground:0 0% 98%;--border:222 10% 23%;--ring:221 91% 58%;--radius:.75rem}
 *{@apply border-border}html{scroll-behavior:smooth;scroll-padding-top:56px}body{@apply bg-background text-foreground font-sans antialiased}
 ::selection{background:hsl(var(--primary)/.3)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}}
+
+@keyframes float{from{transform:translate(0,0)}to{transform:translate(10px,-16px)}}
+@keyframes ripple{from{transform:scale(1);opacity:.55}to{transform:scale(1.9);opacity:0}}
+.ripple{animation:ripple 2.2s ease-out infinite}
+@media(prefers-reduced-motion:reduce){.ripple,.floaty{animation:none!important}}
