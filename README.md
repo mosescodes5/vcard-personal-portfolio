@@ -27,10 +27,10 @@ My personal portfolio: an iOS-inspired, motion-rich single-page site built with 
 
 | | |
 |---|---|
-| **Motion** | Spring-physics reveals, word-by-word hero, magnetic buttons, 3D tilt cards, cursor-following glow, animated counters, scrolling tech ticker, scroll progress bar. All switched off for visitors who prefer reduced motion. |
-| **Interactive** | Ctrl/Cmd + K command palette, project detail sheets, filterable project list, floating mobile tab bar. |
+| **Motion** | Masked line reveals in the hero, a section index that tracks your scroll, animated project rows that expand in place, staggered logo grid, and a live Lagos clock. Nothing follows the mouse. All motion is switched off for visitors who prefer reduced motion. |
+| **Interactive** | Ctrl/Cmd + K command palette, filterable project index, expandable case rows, project detail sheets. |
 | **AI assistant** | "Ask my AI" chat streamed from a Cloudflare Worker to a private Ollama model. It answers only from the content in `src/data.js` and says so when it does not know. |
-| **Design** | shadcn/ui components on Tailwind CSS, Apple system font, light and dark themes that follow the device. |
+| **Design** | Editorial layout with a fixed profile column, bone-paper and ink palette with a single vermilion accent, Bricolage Grotesque, Inter and JetBrains Mono. shadcn/ui components on Tailwind CSS, with light and dark themes that follow the device. |
 
 ## Architecture
 
