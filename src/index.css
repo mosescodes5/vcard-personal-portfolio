@@ -1,0 +1,12 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+@layer base{
+:root{--background:240 20% 96%;--foreground:0 0% 0%;--card:0 0% 100%;--card-foreground:0 0% 0%;--primary:211 100% 50%;--primary-foreground:0 0% 100%;--secondary:240 6% 90%;--secondary-foreground:0 0% 0%;--muted:240 6% 90%;--muted-foreground:240 3% 42%;--accent:240 6% 93%;--accent-foreground:0 0% 0%;--border:240 6% 86%;--ring:211 100% 50%;--radius:1.1rem}
+.dark{--background:0 0% 0%;--foreground:0 0% 100%;--card:240 3% 11%;--card-foreground:0 0% 100%;--primary:211 100% 52%;--primary-foreground:0 0% 100%;--secondary:240 3% 18%;--secondary-foreground:0 0% 100%;--muted:240 3% 18%;--muted-foreground:240 3% 63%;--accent:240 3% 16%;--accent-foreground:0 0% 100%;--border:240 3% 20%;--ring:211 100% 52%}
+*{@apply border-border}html{scroll-behavior:smooth;scroll-padding-top:72px}body{@apply bg-background text-foreground font-sans antialiased}
+::selection{background:hsl(var(--primary)/.25)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}}
+
+.marquee{animation:marq 45s linear infinite}.marquee-wrap:hover .marquee{animation-play-state:paused}
+.marquee-wrap{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee{animation:none}}
