@@ -13,7 +13,7 @@
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 
 **[View the live portfolio](https://vcard-personal-portfolio-three-teal.vercel.app/)** · [GitHub](https://github.com/mosescodes5) · [LinkedIn](https://linkedin.com/in/moses-kouakanou-b7995b385/) · [X](https://x.com/oluwasekan)
 
@@ -29,20 +29,12 @@ My personal portfolio: an iOS-inspired, motion-rich single-page site built with 
 |---|---|
 | **Motion** | Hero lines that rise out of masks, a portrait that reveals from the bottom, a pulsing scroll button, scroll-driven outlined section words, counters, and a floating technology field. No mouse tracking, and all motion switches off for visitors who prefer reduced motion. |
 | **Interactive** | Ctrl/Cmd + K command palette, filterable project index, expandable case rows, project detail sheets. |
-| **AI assistant** | "Ask my AI" chat streamed from a Cloudflare Worker to a private Ollama model. It answers only from the content in `src/data.js` and says so when it does not know. |
+| **AI assistant** | Optional "Ask my AI" chat. It is hidden until an AI backend is connected (`VITE_API_URL`); the site and admin work fully without it. |
 | **Design** | Dark developer-template layout: top navigation, headline with a cut-out portrait, info columns, browser-window project mockups with stack logos and links. shadcn/ui on Tailwind CSS, Space Grotesk and Inter. |
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  V[Visitor] --> F[React frontend on Vercel]
-  F -->|chat request| W[Cloudflare Worker API]
-  W -->|Cloudflare Tunnel| O[Private Ollama server]
-  W -.->|content| D[(src/data.js)]
-```
-
-The site works fully without the AI backend. If the Worker or Ollama is offline, the chat shows an offline message and everything else keeps working.
+React frontend on Vercel, talking straight to Supabase: Postgres for projects, Storage for images, videos and the CV, Auth for the single admin login. Row Level Security (see `supabase/setup.sql`) means visitors can only read published projects, and only the admin email can change anything.
 
 ## Getting started
 
@@ -63,39 +55,20 @@ Put a PDF at `public/assets/cv/Moses-Kouakanou-CV.pdf`. The Download CV button s
 
 Import the repository in Vercel. It detects Vite: build command `npm run build`, output directory `dist`. Every push to `main` redeploys.
 
-### AI backend on Cloudflare Workers
+### Backend on Supabase (projects, uploads, admin login)
 
-1. Run Ollama on a machine you control and expose it only through a [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/), ideally protected with Cloudflare Access.
-2. Deploy the Worker:
-   ```powershell
-   npx wrangler login
-   npx wrangler secret put OLLAMA_BASE_URL --config worker/wrangler.toml
-   npm run worker:deploy
-   ```
-3. Set `ALLOWED_ORIGIN` in `worker/wrangler.toml` to your Vercel URL.
-4. In Vercel, add the environment variable `VITE_API_URL` with your Worker URL and redeploy.
+1. Create a free project at [supabase.com](https://supabase.com).
+2. **SQL Editor** > New query > paste the contents of `supabase/setup.sql` (change the email in it if yours differs) > Run.
+3. **Authentication > Users > Add user > Create new user**: your email and a long password, with Auto Confirm User ticked. This is your admin login.
+4. **Authentication > Sign In / Providers**: turn off "Allow new users to sign up".
+5. **Project Settings > API**: copy the Project URL and the anon (or publishable) key. Never use the `service_role` key in this project.
+6. Local `.env` (see `.env.example`) and Vercel > Settings > Environment Variables: set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`, then redeploy.
 
 ## Admin dashboard
 
-Open `https://your-site/#admin` and sign in. From there you can add, edit, reorder, publish/unpublish and delete projects, upload screenshots, and upload or replace your CV, with no code changes. Everything is stored on Cloudflare (D1 database, R2 bucket) and protected by a server-side login.
+Open `https://your-site/#admin`, sign in with your email and password, click **New project**, paste the live link (the title fills in), then drop, browse or paste (Ctrl+V) a screenshot. Optionally upload an MP4 or WebM (up to 40 MB). With no image, the site shows an automatic preview of the link. You can also reorder, publish or hide, edit and delete projects, and upload your CV.
 
-One-time setup:
-
-```powershell
-npx wrangler login
-npx wrangler d1 create portfolio                       # copy the database_id into worker/wrangler.toml
-npx wrangler r2 bucket create portfolio-media
-npx wrangler d1 execute portfolio --remote --file worker/schema.sql --config worker/wrangler.toml
-npx wrangler secret put ADMIN_PASSWORD --config worker/wrangler.toml   # your login password
-npx wrangler secret put JWT_SECRET --config worker/wrangler.toml       # any long random string
-npm run worker:deploy
-```
-
-Open `/#admin`, sign in, click **New project**, paste the live link (the title fills in), then drop, browse or paste (Ctrl+V) a screenshot. Big images are shrunk automatically. With no image, the site shows an automatic preview of the link.
-
-Trying it locally: copy `worker/.dev.vars.example` to `worker/.dev.vars`, run `npm run worker:dev`, put `VITE_API_URL=http://localhost:8787` in `.env`, then `npm run dev` and open `http://localhost:5173/#admin`.
-
-Until you add projects in the dashboard, the site shows the starter list from `src/data.js`. Use "Import starter projects" once to copy them into the database.
+Until you add projects, the site shows the starter list from `src/data.js`. Use "Import starter projects" once to copy them into the database.
 
 ## Project structure
 
@@ -109,7 +82,7 @@ src/
     Palette.jsx           command palette
     ProjectDialog.jsx     project detail sheet
     ui/                   shadcn/ui components
-worker/                   Cloudflare Worker (AI API)
+supabase/setup.sql        database, storage and security rules
 docs/                     animated README graphics
 ```
 
@@ -119,7 +92,7 @@ Content in this repository is about my real work only. Nothing is invented, and 
 
 ## Videos and the avatar
 
-In the admin you can upload an MP4 or WebM (up to 40 MB) for any project. It plays when visitors hover the card and in the project details. Redeploy the Worker (`npm run worker:deploy`) once so it accepts videos.
+In the admin you can upload an MP4 or WebM (up to 40 MB) for any project. It plays when visitors hover the card and in the project details.
 
 The round avatar in the header and About section fades between a bitmoji and your photo. Save your bitmoji as `public/assets/images/moses-bitmoji.png` (square, transparent PNG works best). Until that file exists, the photo shows on its own.
 

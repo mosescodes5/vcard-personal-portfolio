@@ -2,11 +2,11 @@ import {lazy,Suspense,useEffect,useState} from 'react';
 import {AnimatePresence,MotionConfig,motion,useScroll,useTransform} from 'framer-motion';
 import {ArrowUpRight,ChevronDown,Code2,Download,Github,Linkedin,Mail,MessageCircle,Sparkles,Twitter} from 'lucide-react';
 import {profile as P,skills,projects,experience,services} from './data.js';
-import {shot} from '@/lib/shot';
+import {shot} from '@/lib/shot';import {configured,cvUrl,listPublished} from '@/lib/supabase';
 import {Button} from '@/components/ui/button';import {Badge} from '@/components/ui/badge';
 import {BigWord,Counter,Line,Logo,Reveal,useActive} from '@/components/Motion';
 import Avatar from '@/components/Avatar';import ProjectDialog from '@/components/ProjectDialog';import Assistant from '@/components/Assistant';import Palette from '@/components/Palette';
-const API=import.meta.env.VITE_API_URL||'',CVURL=API?API+'/cv':P.cv,Admin=lazy(()=>import('./admin/Admin.jsx'));
+const API=import.meta.env.VITE_API_URL||'',CVURL=configured?cvUrl:P.cv,DL=configured?CVURL+'?download=Moses-Kouakanou-CV.pdf':CVURL,Admin=lazy(()=>import('./admin/Admin.jsx'));
 const wa=`https://wa.me/${P.whatsapp}?text=${encodeURIComponent(P.waText)}`,ext={target:'_blank',rel:'noopener noreferrer'};
 const NAV=[['top','Home'],['about','About'],['projects','Projects'],['stack','Stack'],['contact','Contact']],ids=NAV.map(n=>n[0]);
 const label='text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground';
@@ -15,7 +15,7 @@ const host=u=>{try{return new URL(u).host}catch{return 'private project'}};
 const FLOAT=[['TypeScript',5,14],['JavaScript',21,6],['React',9,42],['Next.js',24,72],['Vue.js',4,74],['Angular',38,88],['Flutter',50,5],['PHP',63,9],['Python',79,14],['SQL',91,40],['Cloudflare',73,78],['React Native',88,68],['Node.js',57,88],['WordPress',90,10]];
 function Cv(){const[ok,set]=useState(false);
  useEffect(()=>{fetch(CVURL,{method:'HEAD'}).then(r=>set(r.ok&&!/html/.test(r.headers.get('content-type')||''))).catch(()=>set(false))},[]);
- return ok?<Button variant="outline" size="lg" asChild><a href={CVURL} download><Download className="size-4"/>Download CV</a></Button>:<Button variant="outline" size="lg" asChild><a href="#contact" title="CV not uploaded yet">Request my CV</a></Button>}
+ return ok?<Button variant="outline" size="lg" asChild><a href={DL} download><Download className="size-4"/>Download CV</a></Button>:<Button variant="outline" size="lg" asChild><a href="#contact" title="CV not uploaded yet">Request my CV</a></Button>}
 const Chips=({t})=>t?<div className="flex flex-wrap gap-2">{t.split(', ').map(n=><span key={n} className="inline-flex items-center gap-1.5 rounded-full border bg-secondary/60 px-2.5 py-1 text-xs"><Logo n={n} className="size-3.5"/>{n}</span>)}</div>:null;
 const Browser=({p})=>{const srcs=[p.img,p.url&&shot(p.url)].filter(Boolean),[i,setI]=useState(0),src=srcs[i];
  return <div className="overflow-hidden rounded-xl border bg-card shadow-2xl shadow-black/40 transition duration-500 group-hover:shadow-primary/20">
@@ -38,7 +38,7 @@ function Hero({setAi}){const{scrollY}=useScroll(),py=useTransform(scrollY,[0,700
    <h1 aria-label="I build software that turns ideas into reality." className="font-display text-[clamp(2.6rem,6.2vw,4.8rem)] font-bold leading-[1.02] tracking-[-0.03em]"><Line>I build software</Line><Line delay={.1}>that turns ideas</Line><Line delay={.2}><span className="text-primary">into reality.</span></Line></h1>
    <motion.p initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{delay:.9}} className="mt-6 max-w-sm text-muted-foreground">I’m Moses, a software engineer building web and mobile applications with TypeScript, React, Next.js, Vue, Angular and PHP.</motion.p>
    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1.1}} className="mt-8 flex flex-wrap items-center gap-4"><a href="#projects" aria-label="Scroll to projects" className="relative grid size-16 place-items-center rounded-full bg-primary text-white"><span className="ripple absolute inset-0 rounded-full bg-primary"/><motion.span animate={{y:[0,5,0]}} transition={{duration:1.8,repeat:Infinity}}><ChevronDown className="size-6"/></motion.span></a>
-    <Button variant="ghost" onClick={()=>setAi(true)}><Sparkles className="size-4"/>Ask my AI</Button></motion.div></motion.div>
+    {API&&<Button variant="ghost" onClick={()=>setAi(true)}><Sparkles className="size-4"/>Ask my AI</Button>}</motion.div></motion.div>
   <motion.div style={{y:py}} className="relative z-10 mx-auto mt-8 w-[300px] lg:absolute lg:bottom-0 lg:left-[37%] lg:mt-0 lg:w-[440px]"><motion.img src="/assets/images/moses-cutout.webp" alt="Portrait of Moses Kouakanou" width="900" height="1200" initial={{clipPath:'inset(100% 0 0 0)'}} animate={{clipPath:'inset(0% 0 0 0)'}} transition={{duration:1.3,ease:[.2,.7,.1,1],delay:.3}} className="w-full"/></motion.div>
   <motion.div initial={{opacity:0,x:24}} animate={{opacity:1,x:0}} transition={{delay:.8,duration:.8}} className="relative z-20 mt-10 grid gap-8 pb-12 sm:grid-cols-3 lg:absolute lg:right-6 lg:top-[20%] lg:mt-0 lg:w-[230px] lg:grid-cols-1 lg:pb-0">
    <div><p className={label}>About me</p><p className="mt-2 text-sm text-muted-foreground">Software developer in Lagos with a B.Sc. in Computer Science, working across the stack.</p><a href="#about" className="mt-2 inline-block border-b border-foreground text-xs font-medium uppercase tracking-widest">Learn more →</a></div>
@@ -46,7 +46,7 @@ function Hero({setAi}){const{scrollY}=useScroll(),py=useTransform(scrollY,[0,700
    <div><p className={label}>Follow me</p><p className="mt-3 flex gap-4">{P.links.map(([n,u])=>{const I=ICON[n];return <a key={n} href={u} {...ext} aria-label={n} className="text-muted-foreground hover:text-foreground">{I&&<I className="size-5"/>}</a>})}</p></div></motion.div></div></section>}
 const Sec=({id,word,title,children})=><section id={id} className="relative border-b py-24"><BigWord>{word}</BigWord><div className="mx-auto max-w-6xl px-6"><Reveal><h2 className="-mt-6 mb-12 font-display text-3xl font-bold tracking-tight md:text-5xl">{title}</h2>{children}</Reveal></div></section>;
 function Site(){const{scrollYProgress:prog}=useScroll(),[proj,setProj]=useState(null),[list,setList]=useState(projects),[ai,setAi]=useState(false),[pal,setPal]=useState(false),a=useActive(ids),live=list.filter(p=>p.url).length,techs=new Set(skills.flatMap(([,v])=>v.split(', '))).size;
- useEffect(()=>{if(!API)return;fetch(API+'/api/projects').then(r=>r.json()).then(d=>{if(Array.isArray(d)&&d.length)setList(d)}).catch(()=>{})},[]);
+ useEffect(()=>{if(!configured)return;listPublished().then(d=>{if(d.length)setList(d)}).catch(()=>{})},[]);
  return <MotionConfig reducedMotion="user">
  <motion.div aria-hidden style={{scaleX:prog}} className="fixed inset-x-0 top-0 z-40 h-0.5 origin-left bg-primary"/>
  <header className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur-xl"><div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"><a href="#top" className="flex items-center gap-2 font-display text-lg font-bold"><Avatar size={34}/>{P.handle}</a>
@@ -64,5 +64,5 @@ function Site(){const{scrollYProgress:prog}=useScroll(),[proj,setProj]=useState(
   <Sec id="services" word="Services" title="What I can build for you"><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{services.map(([t,d],i)=><div key={t} className="rounded-xl border bg-card p-6 transition-colors hover:border-primary"><span className="font-display text-sm font-semibold text-primary">0{i+1}</span><h3 className="mt-3 font-display text-xl font-semibold">{t}</h3><p className="mt-2 text-sm text-muted-foreground">{d}</p></div>)}</div></Sec>
   <Sec id="contact" word="Contact" title="Have a project in mind?"><p className="max-w-xl text-lg text-muted-foreground">The quickest way to reach me is WhatsApp or email.</p><div className="mt-8 flex flex-wrap gap-3"><Button size="lg" asChild><a href={wa} {...ext}><MessageCircle className="size-4"/>Message on WhatsApp</a></Button><Button size="lg" variant="outline" asChild><a href={`mailto:${P.email}`}><Mail className="size-4"/>{P.email}</a></Button><Cv/></div></Sec></main>
  <footer className="flex items-center justify-center gap-4 py-8 text-sm text-muted-foreground"><span>© {new Date().getFullYear()} {P.name}</span><a href="#admin" className="opacity-60 hover:opacity-100">Admin</a></footer>
- <ProjectDialog p={proj} onClose={()=>setProj(null)}/><Assistant open={ai} setOpen={setAi}/><Palette open={pal} setOpen={setPal} onAi={()=>setAi(true)} onProject={setProj} list={list}/></MotionConfig>}
+ <ProjectDialog p={proj} onClose={()=>setProj(null)}/><Assistant open={ai} setOpen={setAi}/><Palette open={pal} setOpen={setPal} onAi={API?()=>setAi(true):null} onProject={setProj} list={list}/></MotionConfig>}
 export default function App(){const[h,setH]=useState(location.hash);useEffect(()=>{const f=()=>setH(location.hash);addEventListener('hashchange',f);return()=>removeEventListener('hashchange',f)},[]);return h==='#admin'?<Suspense fallback={null}><Admin/></Suspense>:<Site/>}
