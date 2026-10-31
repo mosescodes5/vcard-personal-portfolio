@@ -141,7 +141,8 @@ function Dash({out}) {
   const del = async (p) => { if (!confirm(`Delete "${p.t}"? This cannot be undone.`)) return; try { await db.removeProject(p.id); flash('Deleted.'); load(); } catch (e) { flash(e.message); } };
   const move = async (i, d) => { const a = [...items], j = i + d; if (j < 0 || j >= a.length) return; [a[i], a[j]] = [a[j], a[i]]; setItems(a); try { await db.reorder(a.map((x) => x.id)); } catch (e) { flash(e.message); load(); } };
   const toggle = async (p) => { const {id, published, ...data} = p; try { await db.saveProject(id, !published, data); load(); } catch (e) { flash(e.message); } };
-  const imp = async () => { if (!confirm('Import the starter projects from data.js? Do this only once.')) return; try { for (const p of seed) await db.saveProject(null, true, {...p, f: !!p.f}); flash('Imported.'); load(); } catch (e) { flash(e.message); } };
+  const have = new Set((items || []).map((x) => x.t.trim().toLowerCase())), missing = seed.filter((p) => !have.has(p.t.trim().toLowerCase()));
+  const imp = async () => { if (!confirm(`Import ${missing.length} project${missing.length === 1 ? '' : 's'} from your starter list? Projects already in the dashboard are skipped.`)) return; try { for (const p of missing) await db.saveProject(null, true, {...p, f: !!p.f}); flash(`Imported ${missing.length}.`); load(); } catch (e) { flash(e.message); } };
   const upCv = async (e) => { const file = e.target.files[0]; if (!file) return; try { await db.uploadCv(file); flash('CV uploaded.'); cvCheck(); } catch (x) { flash(x.message); } e.target.value = ''; };
   const rmCv = async () => { if (!confirm('Remove the current CV?')) return; try { await db.removeCv(); flash('CV removed.'); cvCheck(); } catch (e) { flash(e.message); } };
   if (ed) return <Editor p={ed} done={(s) => { setEd(null); if (s) { flash('Saved.'); load(); } }} />;
@@ -153,7 +154,7 @@ function Dash({out}) {
       </div>
       {msg && <p role="status" className="rounded-lg border bg-card px-4 py-2 text-sm">{msg}</p>}
       <section>
-        <div className="mb-4 flex items-center justify-between"><h2 className="font-display text-xl font-semibold">Projects</h2><Button size="sm" onClick={() => setEd({})}><Plus className="size-4" />New project</Button></div>
+        <div className="mb-4 flex items-center justify-between"><h2 className="font-display text-xl font-semibold">Projects</h2><div className="flex gap-2">{items !== null && items.length > 0 && missing.length > 0 && <Button size="sm" variant="outline" onClick={imp}>Import {missing.length} starter project{missing.length === 1 ? '' : 's'}</Button>}<Button size="sm" onClick={() => setEd({})}><Plus className="size-4" />New project</Button></div></div>
         {items === null ? <p className="text-sm text-muted-foreground">Loading…</p> : items.length === 0 ? (
           <div className="rounded-xl border p-6 text-sm"><p className="mb-3 text-muted-foreground">No projects in the database yet. Until you add some, the site shows the starter list from data.js.</p><Button size="sm" variant="outline" onClick={imp}>Import starter projects</Button></div>
         ) : (
