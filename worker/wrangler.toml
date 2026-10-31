@@ -1,0 +1,22 @@
+name = "portfolio-api"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+OLLAMA_MODEL = "llama3.2"
+# Comma-separated list of sites allowed to call this API
+ALLOWED_ORIGIN = "https://vcard-personal-portfolio-three-teal.vercel.app,http://localhost:5173"
+# Secrets (set with: npx wrangler secret put NAME --config worker/wrangler.toml)
+#   OLLAMA_BASE_URL         e.g. https://ollama.yourdomain.com (a Cloudflare Tunnel hostname)
+#   CF_ACCESS_CLIENT_ID     optional, if the tunnel is protected by Cloudflare Access
+#   CF_ACCESS_CLIENT_SECRET optional
+
+[[d1_databases]]
+binding = "DB"
+database_name = "portfolio"
+database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "portfolio-media"
+# More secrets: ADMIN_PASSWORD (your admin login) and JWT_SECRET (any long random string)
